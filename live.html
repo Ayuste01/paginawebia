@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: url('fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-blend-mode: darken;
+            color: #ff0000;
+            font-family: "Bree Serif", serif;
+            text-align: center;
+            margin: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .header-container {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 25px 0;
+            background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        }
+        .header {
+            font-size: 78px;
+            font-weight: bold;
+            color: red;
+            white-space: nowrap;
+            display: inline-block;
+            animation: marquee 5s ease-in-out infinite alternate;
+        }   
+        @keyframes marquee {
+            0% { transform: translateX(60%); }
+            100% { transform: translateX(-100%); }
+        }
+        .sidebar {
+            position: absolute;
+            top: 140px;
+            left: -5px;
+            width: 170px;
+            height: calc(90% - 120px);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+        .sidebar ul li{
+            list-style: none;
+            margin-top: 25px;
+            font-size: 40px;
+        }
+        .sidebar a{
+            text-decoration: none;
+            color: white;
+        }
+        .sidebar ul{
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.7);
+            color: red;
+        }
+
+        .games-section {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .game-item {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .game-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 14px rgba(255, 165, 0, 0.6);
+        }
+
+        .game-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .game-item h3 {
+            margin: 10px 0;
+            color: #ff6600;
+        }
+
+        .game-item p {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin: 10px 0;
+        }
+
+        .game-item a {
+            display: inline-block;
+            text-decoration: none;
+            background: #ff0000;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .game-item a:hover {
+            background: #cc0000;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: 15px;
+            margin-top: auto;
+        }
+
+        /* Estilo del login al estilo WildBet */
+        .login-card {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.685);
+            color: red;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            width: 220px;
+        }
+
+        .login-card input {
+            display: block;
+            margin: 10px 0;
+            padding: 5px;
+            width: 150px;
+        }
+
+        .login-card button {
+            background-color: #1E90FF;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+<body>
+    <div class="header-container">
+        <div class="header">WILDBET CASINO</div>
+    </div>
+    <div class="sidebar">
+        <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="juegos.html">JUEGOS</a></li>
+            <li><a href="live.html">LIVE CASINO</a></li>
+            <li><a href="wallet.html">WALLET</a></li>
+        </ul>
+    </div>
+    <div class="login-card">
+        <p>LOG IN ♥</p>
+        <input type="text" placeholder="Nombre de usuario">
+        <input type="password" placeholder="Contraseña">
+        <button>Gana!</button>
+    </div>
+    <section class="games-section" style="margin-top: 200px;">
+        <h2>🎰 Top Games 🎰</h2>
+        <div class="games-grid">
+            <div class="game-item">
+                <img src="ruleta.jpg" alt="Ruleta">
+                <h3>Ruleta</h3>
+                <p>Gira la rueda y gana en grande.</p>
+                <a href="#">Jugar ahora</a>
+            </div>
+            <div class="game-item">
+                <img src="blackjack.jpg" alt="Blackjack">
+                <h3>Blackjack</h3>
+                <p>Consigue 21 y derrota al crupier.</p>
+                <a href="#">Jugar ahora</a>
+            </div>
+            <div class="game-item">
+                <img src="poker.jpg" alt="Póker">
+                <h3>Póker</h3>
+                <p>Demuestra tus habilidades con las cartas.</p>
+                <a href="#">Jugar ahora</a>
+            </div>
+        </div>
+    </section>
+    
+        </div>
+    </div>
+</body>
+</html>
+<section class="games-section">
+    <h2>🔥 Juegos Destacados 🔥</h2>
+    <div class="games-grid">
+        <div class="game-item">
+            <img src="https://www.jokerbet.es/img/logos/evolutiongaming/ruleta-en-vivo-nuevo.webp" alt="Ruleta en Vivo">
+            <h3>Ruleta en Vivo</h3>
+            <p>Disfruta de la emoción de la ruleta con crupieres reales y apuestas en tiempo real.</p>
+            <a href="#">Jugar ahora</a>
+        </div>
+        <div class="game-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4x8SS3nI68Llsrdb20SWMDCssJS3OyA_Wmg&s" alt="Blackjack en Vivo">
+            <h3>Blackjack en Vivo</h3>
+            <p>Juega contra el crupier y demuestra tu estrategia en este clásico juego de cartas.</p>
+            <a href="#">Jugar ahora</a>
+        </div>
+        <div class="game-item">
+            <img src="https://i.ytimg.com/vi/3qTTVEhu8kQ/maxresdefault.jpg" alt="Póker en Vivo">
+            <h3>Póker en Vivo</h3>
+            <p>Compite contra jugadores reales y muestra tu mejor jugada en una partida intensa.</p>
+            <a href="#">Jugar ahora</a>
+        </div>
+        <div class="game-item">
+            <img src="https://img.rationalcdn.com/starsweb/prod/45436_0.png?imwidth=212&id=10301" alt="Baccarat en Vivo">
+            <h3>Baccarat en Vivo</h3>
+            <p>Apuesta a la banca o al jugador en este juego de cartas elegante y emocionante.</p>
+            <a href="#">Jugar ahora</a>
+        </div>
+        <div class="game-item">
+            <img src="https://img.rationalcdn.com/starsweb/prod/21835_0.jpg" alt="Sic Bo en Vivo">
+            <h3>Sic Bo en Vivo</h3>
+            <p>Lanza los dados y gana con grandes multiplicadores en este clásico asiático.</p>
+            <a href="#">Jugar ahora</a>
+        </div>
+        <div class="game-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTPPmpEOvRvinpkWoZ9lVTVKESLenxeITDjQ&s" alt="Dragon Tiger en Vivo">
+            <h3>Dragon Tiger en Vivo</h3>
+            <p>Un juego rápido y sencillo donde solo necesitas elegir entre Dragón o Tigre.</p>
+            <a href="#">Jugar ahora</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Wildbet Casino. ¡Gana a lo grande!</p>
+</footer>
+
+</body>
+</html>

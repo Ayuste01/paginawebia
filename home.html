@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WildBet Casino</title>
+    <style>
+        body {
+            background:url('fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-blend-mode: darken;
+            color: #C0C0C0;
+            font-family: "Bree Serif", serif;
+            text-align: center;
+            margin: 0;
+            overflow: hidden;
+        }
+        .header-container {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 25px 0;
+            background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        }
+        .header {
+            font-size: 78px;
+            font-weight: bold;
+            color: red;
+            white-space: nowrap;
+            display: inline-block;
+            animation: marquee 5s ease-in-out infinite alternate;
+        }   
+        @keyframes marquee {
+            0% { transform: translateX(60%); }
+            100% { transform: translateX(-100%); }
+        }
+        .sidebar {
+            position: absolute;
+            top: 140px;
+            left: -5px;
+            width: 170px;
+            height: calc(90% - 120px);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+        .sidebar ul li{
+            list-style: none;
+            margin-top: 25px;
+            font-size: 40px;
+        }
+        .sidebar a{
+            text-decoration: none;
+            color: white;
+        }
+        .sidebar ul{
+            margin: 0;
+            padding: 0;
+        }
+        .game-container-all {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            gap: 40px;
+            justify-content: center;
+        }
+        .game-container {
+            display: flex;
+            gap: 20px;
+        }
+        .game-container-title {
+        }
+        .game {
+            width: 180px;
+            height: 220px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+        }
+        .game:hover {
+            transform: scale(1.1);
+        }
+        .game img {
+            width: 100%;
+            height: 130px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .game p {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+        }
+        .login-card {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.685);
+            color: red;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            width: 220px;
+        }
+        .login-card input {
+            display: block;
+            margin: 15px 0;
+            padding: 5px;
+            width: 150px;
+        }
+        .login-card button {
+            background-color: #1E90FF;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <div class="header">WILDBET CASINO</div>
+    </div>
+    <div class="sidebar">
+        <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="juegos.html">JUEGOS</a></li>
+            <li><a href="live.html">LIVE CASINO</a></li>
+            <li><a href="wallet.html">WALLET</a></li>
+        </ul>
+    </div>
+    <div class="login-card">
+        <p>LOG IN ♥</p>
+        <input type="text" placeholder="Nombre de usuario">
+        <input type="password" placeholder="Contraseña">
+        <button>Gana!</button>
+    </div>
+    <div class="game-container-all" style="text-align: center;">
+        <div class="game-container-title">
+            <h3 style="color: red;">Top Games</h3>
+        </div>
+        <div class="game-container">
+            <div class="game">
+                <img src="ruleta.jpg" alt="Ruleta">
+                <p>Ruleta</p>
+            </div>
+            <div class="game" style="position: relative;">
+                <img src="blackjack.jpg" alt="Blackjack">
+                <p>Blackjack</p>
+            </div>
+            <div class="game">
+                <img src="poker.jpg" alt="Póker">
+                <p>Póker</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

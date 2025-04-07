@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WildBet Casino - Mi Cartera</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bree+Serif&display=swap" rel="stylesheet">
+    <style>
+        /* Asegurar que el body y html cubran toda la altura de la página */
+        html, body {
+            height: 100%; /* Esto asegura que la imagen de fondo cubra toda la página */
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Bree Serif', serif;  /* Cambiado a Bree Serif para todo el body */
+            background-image: url('fondoselva.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%; /* Esto asegura que el body ocupe toda la altura */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header-container {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 25px 0;
+            background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+            z-index: 1000;
+        }
+
+        /* Animación de título con tipografía Alfa Slab One */
+        body {
+            background:url('fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-blend-mode: darken;
+            color: #C0C0C0;
+            font-family: "Bree Serif", serif;
+            text-align: center;
+            margin: 0;
+            overflow: hidden;
+        }
+        .header-container {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 25px 0;
+            background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        }
+        .header {
+            font-size: 78px;
+            font-weight: bold;
+            color: red;
+            white-space: nowrap;
+            display: inline-block;
+            animation: marquee 5s ease-in-out infinite alternate;
+        }   
+        @keyframes marquee {
+            0% { transform: translateX(60%); }
+            100% { transform: translateX(-100%); }
+        }
+        .wallet-container {
+            width: 60%;
+            margin: 30px auto;
+            background-color: rgba(0, 0, 0, 0.63);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 120px;
+            margin-bottom: 20px; /* Asegura que haya espacio entre la cartera y el fondo */
+        }
+
+        h2 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .balance {
+            font-size: 22px;
+            color: #28a745;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .transaction-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .transaction-form input {
+            padding: 8px;
+            font-size: 14px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            width: 180px;
+        }
+
+        .transaction-form button {
+            padding: 8px 15px;
+            font-size: 14px;
+            background-color: #004d06;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .transaction-form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Sidebar (barra lateral) */
+        .sidebar {
+            position: absolute;
+            top: 140px;
+            left: -5px;
+            width: 170px;
+            height: calc(90% - 120px);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+        .sidebar ul li{
+            list-style: none;
+            margin-top: 25px;
+            font-size: 40px;
+        }
+        .sidebar a{
+            text-decoration: none;
+            color: white;
+        }
+        .sidebar ul{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Aplicamos la tipografía Bree Serif a los elementos del menú lateral */
+        .sidebar li {
+            font-family: 'Bree Serif', serif;  /* Cambiado a Bree Serif */
+            margin: 25px 0;  /* Aumentamos el margen */
+            font-size: 22px;  /* Aumentamos el tamaño de la fuente */
+            text-transform: uppercase;
+            font-weight: normal;  /* Eliminar negrita */
+        }
+
+        .transaction-history {
+            margin-top: 20px;
+            text-align: center;
+            color: #28a745;
+        }
+
+        .transaction-history h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .transaction-history ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .transaction-history li {
+            padding: 8px;
+            background-color: #f9f9f9;
+            margin: 5px 0;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .login-card {
+            position: absolute;
+            margin-top: 119px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.685);
+            color: red;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            width: 220px;
+        }
+        .login-card input {
+            display: block;
+            margin: 15px 0;
+            padding: 5px;
+            width: 150px;
+        }
+        .login-card button {
+            background-color: #1E90FF;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Nuevo header con animación -->
+<div class="header-container">
+    <div class="header">
+        WildBet Casino
+    </div>
+</div>
+<div class="login-card">
+    <p>LOG IN ♥</p>
+    <input type="text" placeholder="Nombre de usuario">
+    <input type="password" placeholder="Contraseña">
+    <button>Gana!</button>
+</div>
+
+<!-- Sidebar (barra lateral) -->
+<div class="sidebar">
+    <ul>
+        <li><a href="home.html">HOME</a></li>
+            <li><a href="juegos.html">JUEGOS</a></li>
+            <li><a href="live.html">LIVE CASINO</a></li>
+            <li><a href="wallet.html">WALLET</a></li>
+    </ul>
+</div>
+
+</div>
+
+<div class="wallet-container">
+    <h2>Mi Cartera</h2>
+    <div class="balance">
+        <p>Saldo disponible: 500,00 €</p>
+    </div>
+
+    <div class="transaction-form">
+        <input type="number" id="amount" placeholder="Cantidad a añadir o retirar" min="1">
+        <button onclick="addFunds()">Añadir Fondos</button>
+        <button onclick="withdrawFunds()">Retirar Fondos</button>
+    </div>
+
+    <!-- Historial de transacciones -->
+    <div class="transaction-history">
+        <h3>Historial de transacciones:</h3>
+        <ul id="history">
+            <li>+ 100,00 € - Depósito - 18 Marzo 2025</li>
+            <li>- 50,00 € - Retiro - 18 Marzo 2025</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    // Simulación de añadir y retirar dinero
+    let balance = 500.00;  // Saldo inicial
+
+    // Función para añadir fondos
+    function addFunds() {
+        const amount = parseFloat(document.getElementById('amount').value);
+        if (isNaN(amount) || amount <= 0) {
+            alert("Por favor, ingresa una cantidad válida.");
+            return;
+        }
+        balance += amount;
+        document.querySelector('.balance p').textContent = `Saldo disponible: ${balance.toFixed(2)} €`;
+        
+        // Añadir a historial
+        const history = document.getElementById('history');
+        const transaction = document.createElement('li');
+        transaction.textContent = `+ ${amount.toFixed(2)} € - Depósito - ${new Date().toLocaleDateString()}`;
+        history.insertBefore(transaction, history.firstChild); // Insertar al principio
+        document.getElementById('amount').value = '';  // Limpiar el input
+    }
+
+    // Función para retirar fondos
+    function withdrawFunds() {
+        const amount = parseFloat(document.getElementById('amount').value);
+        if (isNaN(amount) || amount <= 0) {
+            alert("Por favor, ingresa una cantidad válida.");
+            return;
+        }
+        if (amount > balance) {
+            alert("No tienes suficiente saldo para realizar el retiro.");
+            return;
+        }
+        balance -= amount;
+        document.querySelector('.balance p').textContent = `Saldo disponible: ${balance.toFixed(2)} €`;
+        
+        // Añadir a historial
+        const history = document.getElementById('history');
+        const transaction = document.createElement('li');
+        transaction.textContent = `- ${amount.toFixed(2)} € - Retiro - ${new Date().toLocaleDateString()}`;
+        history.insertBefore(transaction, history.firstChild); // Insertar al principio
+        document.getElementById('amount').value = '';  // Limpiar el input
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+  <title>WildBet Casino - Juegos</title>
+  <style>
+        body {
+  background:url('fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-blend-mode: darken;
+  color: #C0C0C0;
+  font-family: "Bree Serif", serif;
+  text-align: center;
+  margin: 0;
+  overflow-y: auto; /* ← CAMBIO AQUÍ */
+}
+
+        .header-container {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 25px 0;
+            background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        }
+        .header {
+            font-size: 78px;
+            font-weight: bold;
+            color: red;
+            white-space: nowrap;
+            display: inline-block;
+            animation: marquee 5s ease-in-out infinite alternate;
+        }   
+        @keyframes marquee {
+            0% { transform: translateX(60%); }
+            100% { transform: translateX(-100%); }
+        }
+        .sidebar {
+            position: absolute;
+            top: 140px;
+            left: -5px;
+            width: 170px;
+            height: calc(90% - 120px);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            font-family: 'Bree Serif', serif;
+        }
+        .sidebar ul li {
+            list-style: none;
+            margin-top: 25px;
+            font-size: 40px;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+        }
+        .sidebar ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            flex-grow: 1;
+            margin-top: 120px;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            color: #fff;
+            font-weight: bold;
+            margin-left: 20px;
+            margin-top: 40px; /* Ajusta este margen según sea necesario */
+            font-family: 'Bree Serif', serif; /* Aplicar la misma fuente que el sidebar */
+        }
+
+        .category-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+            margin-top: 40px;
+            margin-left: 20px;
+        }
+
+        .game-card {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            height: 260px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .game-card:hover {
+            transform: scale(1.05);
+        }
+
+        .overlay {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            color: #fff;
+            padding: 15px;
+            text-shadow: 1px 1px 3px #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 100px;
+        }
+
+        .overlay h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            text-align: center; /* Alineación centrada */
+        }
+
+        .overlay p {
+            font-size: 0.95rem;
+            margin-top: 8px;
+            line-height: 1.3;
+            height: 42px; /* para nivelar todas las biografías */
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Tarjetas con imágenes */
+        .jaguars-gold-rush {
+            background-image: url('https://img.artguru.ai/image/aigc/alg%26watermark%26p%26f5c0263c680622879419642fc5e231d3_1024_1024.webp'); /* Reemplaza con la URL de la imagen generada */
+        }
+
+        .wild-safari-spins {
+            background-image: url('https://img.artguru.ai/image/aigc/alg%26watermark%26p%26dcac4f0336c406d52fc7c575e3e6835d_1024_1024.webp'); /* Reemplaza con la URL de la imagen generada */
+        }
+
+        .monkey-king-jackpot {
+            background-image: url('https://img.artguru.ai/image/aigc/alg%26watermark%26p%26802fabf201059b261ab26bb718c577b8_1024_1024.webp'); /* Reemplaza con la URL de la imagen generada */
+        }
+
+        .amazon-treasure-hunt {
+            background-image: url('https://img-cdn.pixlr.com/image-generator/history/67f39db6fe267db61f8a6ca8/0a6d5dc3-abce-4555-b838-2de61bb92fc8/preview.webp'); /* Reemplaza con la URL de la imagen generada */
+        }
+
+        .jungle-roulette {
+            background-image: url('https://img-cdn.pixlr.com/image-generator/history/67f39dd3c17ab9e5520f4204/6e2bc4d8-22d4-41ba-8099-75c5507c8409/preview.webp'); /* Reemplaza con la URL de la imagen generada */
+        }
+
+        .safari-roulette {
+            background-image: url('https://img-cdn.pixlr.com/image-generator/history/67f39eeb2e9d879d36174d7b/8a3ea7ac-0e25-44be-aa02-15123e24dac7/preview.webp'); /* Reemplaza con la URL de la imagen generada */
+        }
+
+        .rainforest-roulette {
+            background-image: url('https://img-cdn.pixlr.com/image-generator/history/67f39f26c28a40cae62f69d4/04a55f4d-d9a4-4669-9fe3-d6c38984a1f7/preview.webp'); /* Reemplaza con la URL de la imagen generada */
+        }
+
+        .wildlife-live-roulette {
+            background-image: url('https://img-cdn.pixlr.com/image-generator/history/67f39f5def27f0fa283fe5b7/339b5b39-07b8-4f44-b523-d39111ab6e13/preview.webp'); /* Reemplaza con la URL de la imagen generada */
+        }
+
+        .jungle-poker {
+            background-image: url('https://img-cdn.pixlr.com/image-generator/history/67f3a3ecd8aa1d861e6c53ad/c7af6a66-02d7-4dfc-8c3e-1d4a732268aa/preview.webp'); /* Reemplaza con la URL de la imagen generada */
+        }
+
+        .safari-texas-holdem {
+            background-image: url('https://img-cdn.pixlr.com/image-generator/history/67f3a12a549ea9336648de27/d1d95522-70ea-4413-b7d7-65d34f13bb4b/preview.webp'); /* Reemplaza con la URL de la imagen generada */
+        }
+
+        .rainforest-omaha {
+            background-image: url('https://img-cdn.pixlr.com/image-generator/history/67f3a47aef27f0fa28407df2/1f3b3cb6-62fd-4e5e-81e3-a66add023da7/preview.webp'); /* Reemplaza con la URL de la imagen generada */
+        }
+
+        .wildlife-live-poker {
+            background-image: url('https://img-cdn.pixlr.com/image-generator/history/67f3a4ae1f0112757bdc754f/bf4a39ba-3a5a-46f8-8ce1-0f40dc0ae120/preview.webp'); /* Reemplaza con la URL de la imagen generada */
+        }
+
+        .login-card {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.685);
+            color: red;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            width: 220px;
+        }
+        .login-card input {
+            display: block;
+            margin: 15px 0;
+            padding: 5px;
+            width: 150px;
+        }
+        .login-card button {
+            background-color: #1E90FF;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .category-section {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .category-section {
+                grid-template-columns: 1fr;
+            }
+        }
+  </style>
+</head>
+<body>
+  <div class="header-container">
+    <div class="header">WILDBET CASINO</div>
+  </div>
+  
+  <div class="sidebar">
+    <ul>
+      <li><a href="home.html">HOME</a></li>
+      <li><a href="juegos.html">JUEGOS</a></li>
+      <li><a href="live.html">LIVE CASINO</a></li>
+      <li><a href="wallet.html">WALLET</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <section>
+      <h2 class="category-title">Tragamonedas</h2>
+      <div class="category-section">
+        <div class="game-card jaguars-gold-rush">
+          <div class="overlay">
+            <h3>Jaguar's Gold Rush</h3>
+            <p>Embárcate en una emocionante caza de tesoros en la jungla.</p>
+          </div>
+        </div>
+        <div class="game-card wild-safari-spins">
+          <div class="overlay">
+            <h3>Wild Safari Spins</h3>
+            <p>Gira los carretes y explora la sabana en busca de premios.</p>
+          </div>
+        </div>
+        <div class="game-card monkey-king-jackpot">
+          <div class="overlay">
+            <h3>Monkey King Jackpot</h3>
+            <p>Ayuda al Rey Mono a recuperar su jackpot en la aventura.</p>
+          </div>
+        </div>
+        <div class="game-card amazon-treasure-hunt">
+          <div class="overlay">
+            <h3>Amazon Treasure Hunt</h3>
+            <p>Explora la selva amazónica en busca de tesoros legendarios.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="category-title">Ruletas</h2>
+      <div class="category-section">
+        <div class="game-card jungle-roulette">
+          <div class="overlay">
+            <h3>Jungle Roulette</h3>
+            <p>Sumérgete en la clásica ruleta europea en medio de la jungla.</p>
+          </div>
+        </div>
+        <div class="game-card safari-roulette">
+          <div class="overlay">
+            <h3>Ruleta Tropical Storm</h3>
+            <p>La emoción medio de un huracán tropical, donde las apuestas y la acción se desatan.</p>
+          </div>
+        </div>
+        <div class="game-card rainforest-roulette">
+          <div class="overlay">
+            <h3>Rainforest Roulette</h3>
+            <p>Experimenta la emoción de la ruleta francesa en la selva tropical.</p>
+          </div>
+        </div>
+        <div class="game-card wildlife-live-roulette">
+          <div class="overlay">
+            <h3>Ruleta Jungle Quest</h3>
+            <p>Embárcate en una aventura en la jungla donde cada giro te acerca a un tesoro oculto.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="category-title">Poker</h2>
+      <div class="category-section">
+        <div class="game-card jungle-poker">
+          <div class="overlay">
+            <h3>Jungle Poker</h3>
+            <p>Disfruta del clásico juego de poker en un entorno selvático.</p>
+          </div>
+        </div>
+        <div class="game-card safari-texas-holdem">
+          <div class="overlay">
+            <h3>Safari Texas Hold'em</h3>
+            <p>Juega al Texas Hold'em en medio de la sabana africana.</p>
+          </div>
+        </div>
+        <div class="game-card rainforest-omaha">
+          <div class="overlay">
+            <h3>Viper’s Bluff Poker</h3>
+            <p>El engaño es la clave, ¡igual que la astucia de una serpiente en la jungla!</p>
+          </div>
+        </div>
+        <div class="game-card wildlife-live-poker">
+          <div class="overlay">
+            <h3>Lost Temple Poker</h3>
+            <p>Un juego de póker de alto riesgo en las ruinas de un antiguo templo, con giros inesperados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Login Card -->
+  <div class="login-card">
+    <h3>Iniciar Sesión</h3>
+    <input type="text" placeholder="Nombre de usuario" />
+    <input type="password" placeholder="Contraseña" />
+    <button>Entrar</button>
+  </div>
+</body>
+</html>
